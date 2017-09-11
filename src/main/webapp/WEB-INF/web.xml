@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+>
+
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>auth-user</servlet-name>
+        <servlet-class>com.arief.web.servlets.AuthServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>auth-user</servlet-name>
+        <url-pattern>/auth-user</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>list-servlet</servlet-name>
+        <servlet-class>com.arief.web.servlets.ListServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>list-servlet</servlet-name>
+        <url-pattern>/menu/list-data</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>log-out</servlet-name>
+        <servlet-class>com.arief.web.servlets.LogOutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>log-out</servlet-name>
+        <url-pattern>/log-out</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>auth-filter</filter-name>
+        <filter-class>com.arief.web.filters.UserFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>auth-filter</filter-name>
+        <url-pattern>/menu/*</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/errors/forbidden-access.html</location>
+    </error-page>
+
+
+</web-app>

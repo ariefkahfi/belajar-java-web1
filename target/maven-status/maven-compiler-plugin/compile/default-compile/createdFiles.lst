@@ -1,0 +1,5 @@
+com/arief/web/filters/UserFilter.class
+com/arief/web/domain/User.class
+com/arief/web/servlets/LogOutServlet.class
+com/arief/web/servlets/ListServlet.class
+com/arief/web/servlets/AuthServlet.class
